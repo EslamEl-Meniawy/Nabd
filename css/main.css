@@ -1,0 +1,246 @@
+/* 
+* @Author: Eslam El-Meniawy
+* @Date: 2015-09-09 12:47:44
+* @Last Modified by: eslam
+* @Last Modified time: 2015-09-20 11:30:05
+*
+* Dear maintainer:
+* When I wrote this, only God and I understood what I was doing
+* Now, God only knows
+* So, good luck maintaining the code :D
+*/
+
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+	-webkit-touch-callout: none;
+	-webkit-text-size-adjust: none;
+	-webkit-user-select: none;
+}
+.rtl {
+	direction: rtl;
+}
+.wh100 {
+	width: 100%;
+	height: 100%;
+}
+.tac {
+	text-align: center;
+}
+.tdn {
+	text-decoration: none;
+}
+.pr {
+	position: relative;
+}
+.nop {
+	padding: 0;
+}
+.nom {
+	margin: 0;
+}
+.swiper-container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+}
+.swiper-pagination-bullet {
+	background: #000;
+	opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+	opacity: 1;
+	background: rgb(100,221,23);
+}
+.swiper-container-horizontal > .swiper-pagination {
+	bottom: 0;
+}
+.drawer-title {
+	color: transparent;
+}
+hr {
+	border-color: #2e2e2e;
+}
+h5 {
+	margin: 0;
+}
+.mdl-layout__drawer {
+	border-right: 1px solid #545454;
+}
+.paper-snackbar {
+	transition-property: opacity, bottom, left, right, width, margin, border-radius;
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+	font-size: 14px;
+	min-height: 14px;
+	background-color: #323232;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	line-height: 22px;
+	padding: 18px 24px;
+	bottom: 0px;
+	opacity: 0;
+	left: 0px;
+	right: 0px;
+	direction: rtl;
+	z-index: 999999;
+}
+.paper-snackbar .action {
+	background: inherit;
+	display: inline-block;
+	border: none;
+	font-size: inherit;
+	color: #FF5252;
+	margin: 0px 24px 0px 0px;
+	padding: 0px;
+	min-width: min-content;
+}
+.header-img {
+	width: auto;
+	display: block;
+	margin: auto;
+}
+.main-grid-icon {
+	font-size: 32px;
+	margin-top: 10px;
+	width: 100%;
+	text-align: center;
+}
+.main-grid-title {
+	margin: 0 2px 10px;
+}
+.mdl-tabs__tab {
+	width: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active::after {
+	background-color: rgb(100,221,23);
+}
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
+	color: rgba(100,221,23, 0.87);
+}
+.mdl-tabs__panel {
+	margin-top: 16px;
+}
+.mdl-mega-footer {
+	padding: 10px 10px;
+}
+.footer-div {
+	width: 24px;
+	height: 24px;
+	display: block;
+	margin: auto;
+}
+.footer-link {
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 5px;
+}
+.slide-grid {
+	width: 100%;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.powered-by {
+	float: right;
+	font-size: 10px;
+	height: 24px;
+    line-height: 24px;
+}
+.footer-social {
+	float: left;
+}
+.loading {
+	position: absolute;
+	top: 0;
+	z-index: 99999;
+	width: 100%;
+	text-align: center;
+	margin-top: 8px;
+	display: none;
+}
+.stroke {
+	border-bottom: 1px solid #c3c3c3;
+}
+.details-img {
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+.details-title-block {
+	width: 100%;
+	display: block;
+}
+.details-title-block button {
+	float: right;
+}
+.details-title-h6 {
+	line-height: 2.3;
+	margin: 0;
+	padding-right: 8px;
+	float: right;
+}
+.details-data-block {
+	margin-top: 16px;
+	width: 100%;
+}
+.more-button {
+	position: fixed;
+	right: 24px;
+	bottom: 50px;
+	z-index: 99999;
+}
+/* mobile */
+@media screen and (max-width: 599px) {
+	.header-img {
+		height: 56px;
+	}
+	.swiper-slide, .category-item {
+		height: 80px;
+	}
+	.swiper-container-news, .swiper-container-results {
+		height: 260px;
+	}
+	.details-img {
+		height: 200px;
+	}
+}
+/* tab */
+@media screen and (min-width: 600px) {
+	.header-img {
+		height: 56px;
+	}
+	.swiper-slide, .category-item {
+		height: 130px;
+	}
+	.swiper-container-news, .swiper-container-results {
+		height: 410px;
+	}
+	.details-img {
+		height: 300px;
+	}
+}
+/* desktop */
+@media screen and (min-width: 768px) {
+	.header-img {
+		height: 64px;
+	}
+	.swiper-slide, .category-item {
+		height: 180px;
+	}
+	.swiper-container-news, .swiper-container-results {
+		height: 560px;
+	}
+	.details-img {
+		height: 400px;
+	}
+}

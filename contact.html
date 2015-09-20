@@ -1,0 +1,128 @@
+<!-- 
+~ @Author: Eslam El-Meniawy
+~ @Date: 2015-09-13 15:31:15
+~ @Last Modified by: eslam
+~ @Last Modified time: 2015-09-20 14:48:24
+~
+~ Dear maintainer:
+~ When I wrote this, only God and I understood what I was doing
+~ Now, God only knows
+~ So, good luck maintaining the code :D
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+		<title>Contact Us</title>
+		<link rel="stylesheet" href="css/material.min.css">
+		<link rel="stylesheet" href="css/icon.css">
+		<link rel="stylesheet" href="css/robofont.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body>
+    	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    		<header class="mdl-layout__header mdl-color--light-green-A700">
+				<img class="header-img" src="img/logo.png">
+			</header>
+			<div class="mdl-layout__drawer mdl-color--grey-800">
+				<span class="mdl-layout-title drawer-title">نبض</span>
+				<nav class="mdl-navigation">
+					<a class="mdl-navigation__link" href="index.html">
+						<div class="tac">
+							<i class="material-icons mdl-color-text--grey">home</i>
+							<br>
+							<span class="mdl-color-text--white"><b>الرئيسية</b></span>
+						</div>
+					</a>
+					<hr>
+					<a class="mdl-navigation__link" href="category.html?id=4">
+						<div class="tac">
+							<i class="material-icons mdl-color-text--grey">group</i>
+							<br>
+							<span class="mdl-color-text--white"><b>أخبار المرشحين</b></span>
+						</div>
+					</a>
+					<hr>
+					<a class="mdl-navigation__link" href="category.html?id=12">
+						<div class="tac">
+							<i class="material-icons mdl-color-text--grey">tv</i>
+							<br>
+							<span class="mdl-color-text--white"><b>البرامج الانتخابية</b></span>
+						</div>
+					</a>
+					<hr>
+				</nav>
+			</div>
+			<main class="mdl-layout__content" id="main">
+				<div class="page-content rtl">
+					<div class="mdl-grid">
+						<div class="mdl-shadow--2dp details-title-block">
+							<h6 class="rtl details-title-h6 mdl-color-text--grey-800">بيانات الاتصال</h6>
+						</div>
+						<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp details-data-block">
+							<tbody>
+								<tr>
+									<td>الهاتف</td>
+									<td>000000000</td>
+								</tr>
+								<tr>
+									<td>الميل</td>
+									<td>contact@mail.com</td>
+								</tr>
+								<tr>
+									<td>فيس بوك</td>
+									<td>facebook.com</td>
+								</tr>
+								<tr>
+									<td>تويتر</td>
+									<td>twitter.com</td>
+								</tr>
+								<tr>
+									<td>جوجل بلس</td>
+									<td>plus.google.com</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</main>
+			<footer class="mdl-mega-footer">
+				<div class="footer-social">
+					<a class="footer-link" href="#" onclick="window.open('http://more-tech.org/', '_system');">
+						<div class="footer-div">
+							<img src="img/facebook.png">
+						</div>
+					</a>
+					<a class="footer-link" href="#" onclick="window.open('http://more-tech.org/', '_system');">
+						<div class="footer-div">
+							<img src="img/twitter.png">
+						</div>
+					</a>
+					<a class="footer-link" href="#" onclick="window.open('http://more-tech.org/', '_system');">
+						<div class="footer-div">
+							<img src="img/google-plus.png">
+						</div>
+					</a>
+				</div>
+				<div class="powered-by">
+					<span>Powered BY </span>
+					<a class="tdn mdl-color-text--light-green-A700" href="#" onclick="window.open('http://more-tech.org/', '_system');">More Tech</a>
+				</div>
+			</footer>
+    	</div>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script src="js/material.min.js"></script>
+		<script type="text/javascript">
+			document.addEventListener("deviceready", function() {
+				document.addEventListener("backbutton", function() {
+					window.location = "index.html";
+				}, false);
+			}, false);
+		</script>
+    </body>
+</html>

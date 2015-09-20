@@ -1,0 +1,101 @@
+<!-- 
+~ @Author: Eslam El-Meniawy
+~ @Date: 2015-09-10 14:19:18
+~ @Last Modified by: eslam
+~ @Last Modified time: 2015-09-20 14:48:07
+~
+~ Dear maintainer:
+~ When I wrote this, only God and I understood what I was doing
+~ Now, God only knows
+~ So, good luck maintaining the code :D
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+		<title>Category</title>
+		<link rel="stylesheet" href="css/material.min.css">
+		<link rel="stylesheet" href="css/icon.css">
+		<link rel="stylesheet" href="css/robofont.css" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header mdl-color--light-green-A700">
+				<img class="header-img" src="img/logo.png">
+			</header>
+			<div class="mdl-layout__drawer mdl-color--grey-800">
+				<span class="mdl-layout-title drawer-title">نبض</span>
+				<nav class="mdl-navigation">
+					<a class="mdl-navigation__link" href="index.html">
+						<div class="tac">
+							<i class="material-icons mdl-color-text--grey">home</i>
+							<br>
+							<span class="mdl-color-text--white"><b>الرئيسية</b></span>
+						</div>
+					</a>
+					<hr>
+					<a class="mdl-navigation__link" href="category.html?id=4">
+						<div class="tac">
+							<i class="material-icons mdl-color-text--grey">group</i>
+							<br>
+							<span class="mdl-color-text--white"><b>أخبار المرشحين</b></span>
+						</div>
+					</a>
+					<hr>
+					<a class="mdl-navigation__link" href="category.html?id=12">
+						<div class="tac">
+							<i class="material-icons mdl-color-text--grey">tv</i>
+							<br>
+							<span class="mdl-color-text--white"><b>البرامج الانتخابية</b></span>
+						</div>
+					</a>
+					<hr>
+				</nav>
+			</div>
+			<main class="mdl-layout__content" id="main">
+				<div class="page-content pr" id="main-data">
+					<div class="loading" id="loading">
+						<div class="mdl-spinner mdl-js-spinner is-active"></div>
+					</div>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored more-button mdl-color--light-green-A700" id="show-more">
+						<i class="material-icons">add</i>
+					</button>
+				</div>
+			</main>
+			<footer class="mdl-mega-footer">
+				<div class="footer-social">
+					<a class="footer-link" href="#" onclick="window.open('http://more-tech.org/', '_system');">
+						<div class="footer-div">
+							<img src="img/facebook.png">
+						</div>
+					</a>
+					<a class="footer-link" href="#" onclick="window.open('http://more-tech.org/', '_system');">
+						<div class="footer-div">
+							<img src="img/twitter.png">
+						</div>
+					</a>
+					<a class="footer-link" href="#" onclick="window.open('http://more-tech.org/', '_system');">
+						<div class="footer-div">
+							<img src="img/google-plus.png">
+						</div>
+					</a>
+				</div>
+				<div class="powered-by">
+					<span>Powered BY </span>
+					<a class="tdn mdl-color-text--light-green-A700" href="#" onclick="window.open('http://more-tech.org/', '_system');">More Tech</a>
+				</div>
+			</footer>
+		</div>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script src="js/material.min.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/snackbar.min.js"></script>
+		<script type="text/javascript" src="js/category.js"></script>
+	</body>
+</html>

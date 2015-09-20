@@ -1,0 +1,149 @@
+/* 
+* @Author: Eslam El-Meniawy
+* @Date: 2015-09-09 13:14:48
+* @Last Modified by: eslam
+* @Last Modified time: 2015-09-17 12:46:35
+*
+* Dear maintainer:
+* When I wrote this, only God and I understood what I was doing
+* Now, God only knows
+* So, good luck maintaining the code :D
+*/
+
+var latestLink = 'http://192.168.1.2/news_admin/index.php/news/recent_news',
+	resultsLink = 'http://192.168.1.2/news_admin/index.php/news/recent_news';
+var connected;
+var loadedLatest = false, loadedResults = false;
+var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid slide-grid mdl-color--grey-300 nop"><div class="mdl-cell mdl-cell--5-col mdl-cell--3-col-tablet mdl-cell--2-col-phone nom" style="background: url(http://192.168.1.2/news_admin/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell mdl-cell--7-col mdl-cell--5-col-tablet mdl-cell--2-col-phone rtl"><h5 class="mdl-color-text--grey-800">{{title}}</h5></div></div></a></div>';
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+	document.addEventListener("backbutton", onBackKeyDown, false);
+	checkConnection();
+	if (connected == 1) {
+		$('#loading').show();
+		loadLatest();
+		loadResults();
+	} else {
+		createSnackbar("لا يوجد اتصال بالانترنت", 'إغلاق');
+		loadLatestOffline();
+		loadResultsOffline();
+	}
+	var push = PushNotification.init({
+		"android": {
+			"senderID": "7577940910"
+		},
+		"ios": {"alert": "true", "badge": "true", "sound": "true"}, 
+		"windows": {} 
+	});
+	push.on('registration', function(data) {
+		window.plugins.uniqueDeviceID.get(function(uuid) {
+			$.ajax({
+				type : 'POST',
+				url : 'http://11.11.11.21:3000/register',
+				data : {
+					devId: uuid,
+					regId: data.registrationId
+				}
+			});
+		}, function() {});
+	});
+	push.on('notification', function(data) {
+		if (!data.additionalData.foreground) {
+			window.location = "details.html?id=" + data.additionalData.additionalData.id;
+		}
+	});
+	push.on('error', function(e) {});
+}
+function onBackKeyDown() {
+	navigator.app.exitApp();
+}
+function checkConnection() {
+	var networkState = navigator.connection.type;
+	if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
+		connected = 0;
+	} else {
+		connected = 1;
+	}
+}
+function loadLatest() {
+	$.ajax({
+		type : 'GET',
+		url : latestLink,
+		dataType : 'JSON'
+	}).done(function(response) {
+		window.localStorage.setItem('savedLatest', JSON.stringify(response));
+		fillLatest(response);
+	}).fail(function() {
+		loadedLatest = true;
+		if (loadedLatest && loadedResults) {
+			$('#loading').hide();
+		}
+		createSnackbar("حدث خطأ اثناء تحميل آخر الأخبار برجاء المحاولة مرة آخرى", 'إغلاق');
+		loadLatestOffline();
+	});
+}
+function loadResults() {
+	$.ajax({
+		type : 'GET',
+		url : resultsLink,
+		dataType : 'JSON'
+	}).done(function(response) {
+		window.localStorage.setItem('savedResults', JSON.stringify(response));
+		fillResults(response);
+	}).fail(function() {
+		loadedResults = true;
+		if (loadedLatest && loadedResults) {
+			$('#loading').hide();
+		}
+		createSnackbar("حدث خطأ اثناء تحميل النتائج برجاء المحاولة مرة آخرى", 'إغلاق');
+		loadResultsOffline();
+	});
+}
+function loadLatestOffline() {
+	var savedLatest = window.localStorage.getItem('savedLatest');
+	if (!(typeof savedLatest === 'undefined' || savedLatest === null)) {
+		fillLatest(JSON.parse(savedLatest));
+	}
+}
+function loadResultsOffline() {
+	var savedResults = window.localStorage.getItem('savedResults');
+	if (!(typeof savedResults === 'undefined' || savedResults === null)) {
+		fillResults(JSON.parse(savedResults));
+	}
+}
+function fillLatest(response) {
+	for (var i = 0; i < response.length; i++) {
+		$('#newsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
+	}
+	new Swiper('.swiper-container-news', {
+		pagination: '.swiper-pagination-news',
+		slidesPerView: 1,
+		slidesPerColumn: 3,
+		paginationClickable: true,
+		autoplay: 5000,
+		observer: true,
+		observeParents: true
+	});
+	loadedLatest = true;
+	if (loadedLatest && loadedResults) {
+		$('#loading').hide();
+	}
+}
+function fillResults(response) {
+	for (var i = 0; i < response.length; i++) {
+		$('#resultsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
+	}
+	new Swiper('.swiper-container-results', {
+		pagination: '.swiper-pagination-results',
+		slidesPerView: 1,
+		slidesPerColumn: 3,
+		paginationClickable: true,
+		autoplay: 5000,
+		observer: true,
+		observeParents: true
+	});
+	loadedResults = true;
+	if (loadedLatest && loadedResults) {
+		$('#loading').hide();
+	}
+}
