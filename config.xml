@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
     <preference name='phonegap-version' value='cli-5.1.1' />
-    <plugin name="cordova-plugin-whitelist" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -25,8 +25,8 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <allow-navigation href="*" />
-    <plugin name="cordova-plugin-network-information" />
-    <plugin name="cordova-plugin-inappbrowser" />
-    <plugin name="phonegap-plugin-push" source="npm" />
-    <plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="plugins.cordova.io" />
+    <gap:plugin name="cordova-plugin-network-information" source="npm" />
+    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
+    <gap:plugin name="phonegap-plugin-push" source="npm" />
+    <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="plugins.cordova.io" />
 </widget>
