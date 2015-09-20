@@ -8,6 +8,7 @@
         Eslam El-Meniawy
     </author>
     <content src="index.html" />
+    <preference name='phonegap-version' value='cli-5.1.1' />
     <plugin name="cordova-plugin-whitelist" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
