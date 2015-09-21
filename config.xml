@@ -8,6 +8,7 @@
         Eslam El-Meniawy
     </author>
     <content src="index.html" />
+    <preference name="permissions" value="none"/>
     <preference name="android-minSdkVersion" value="10" />
     <gap:plugin name="cordova-plugin-network-information" source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
