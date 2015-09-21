@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="elmeniawy.eslam.nabd" android-versionCode="1014001" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Nabd</name>
-    <description>
-        Nabd elections mobile application.
-    </description>
-    <author email="islam@muslim-tec.com" href="https://twitter.com/eslam_elmeniawy">
-        Eslam El-Meniawy
-    </author>
-    <content src="index.html" />
-    <preference name="permissions" value="none"/>
-    <preference name="android-minSdkVersion" value="10" />
-    <gap:plugin name="cordova-plugin-network-information" source="npm" />
-    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
-    <gap:plugin name="phonegap-plugin-push" source="npm" />
-    <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="plugins.cordova.io" />
-    <access origin="*" />
+	<name>Nabd</name>
+	<description>
+		Nabd elections mobile application.
+	</description>
+	<author email="islam@muslim-tec.com" href="https://twitter.com/eslam_elmeniawy">
+		Eslam El-Meniawy
+	</author>
+	<content src="index.html" />
+	<preference name="permissions" value="none"/>
+	<preference name="android-minSdkVersion" value="10" />
+	<gap:plugin name="cordova-plugin-network-information" source="npm" />
+	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
+	<gap:plugin name="phonegap-plugin-push" source="npm" />
+	<gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="plugins.cordova.io" />
+	<access origin="*" />
 </widget>
