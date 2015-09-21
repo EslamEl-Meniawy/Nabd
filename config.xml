@@ -8,8 +8,8 @@
         Eslam El-Meniawy
     </author>
     <content src="index.html" />
-    <gap:plugin name="cordova-plugin-network-information" source="npm" />
-    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="phonegap-plugin-push" source="npm" />
     <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="plugins.cordova.io" />
     <access origin="*" />
