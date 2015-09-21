@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-17 12:46:35
+* @Last Modified time: 2015-09-21 20:48:11
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -10,8 +10,8 @@
 * So, good luck maintaining the code :D
 */
 
-var latestLink = 'http://192.168.1.2/news_admin/index.php/news/recent_news',
-	resultsLink = 'http://192.168.1.2/news_admin/index.php/news/recent_news';
+var latestLink = 'http://188.40.75.156:8080/nabd/index.php/news/recent_news',
+	resultsLink = 'http://188.40.75.156:8080/nabd/index.php/news/recent_news';
 var connected;
 var loadedLatest = false, loadedResults = false;
 var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid slide-grid mdl-color--grey-300 nop"><div class="mdl-cell mdl-cell--5-col mdl-cell--3-col-tablet mdl-cell--2-col-phone nom" style="background: url(http://192.168.1.2/news_admin/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell mdl-cell--7-col mdl-cell--5-col-tablet mdl-cell--2-col-phone rtl"><h5 class="mdl-color-text--grey-800">{{title}}</h5></div></div></a></div>';

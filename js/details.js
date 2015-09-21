@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:33
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-13 15:30:55
+* @Last Modified time: 2015-09-21 20:49:02
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -46,10 +46,10 @@ function checkConnection() {
 function loadData() {
 	$.ajax({
 		type : 'GET',
-		url : 'http://192.168.1.2/news_admin/index.php/News/get_news/' + GetDataValue('id'),
+		url : 'http://188.40.75.156:8080/nabd/index.php/News/get_news/' + GetDataValue('id'),
 		dataType : 'JSON'
 	}).done(function(response) {
-		$('#news-image').attr('src', 'http://192.168.1.2/news_admin/images/news/' + response[0].image);
+		$('#news-image').attr('src', 'http://188.40.75.156:8080/nabd/images/news/' + response[0].image);
 		$('#news-title').html(response[0].title);
 		$('#news-details').html(response[0].desciption);
 		$('#loading').hide();

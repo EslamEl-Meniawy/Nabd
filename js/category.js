@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:54
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-14 15:13:02
+* @Last Modified time: 2015-09-21 20:48:21
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -59,7 +59,7 @@ function checkConnection() {
 function loadData() {
 	$.ajax({
 		type : 'GET',
-		url : 'http://192.168.1.2/news_admin/index.php/news?section=' + id + '&page=' + page,
+		url : 'http://188.40.75.156:8080/nabd/index.php/news?section=' + id + '&page=' + page,
 		dataType : 'JSON'
 	}).done(function(response) {
 		if (page == 0) {

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.phonegap.helloworld" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
 	<name>Nabd Test</name>
 	<description>
 		Nabd elections mobile application.
@@ -9,7 +9,7 @@
 	</author>
 	<content src="index.html" />
 	<preference name="permissions" value="none" />
-	<preference name="android-minSdkVersion" value="14" />
+	<preference name="android-minSdkVersion" value="10" />
 	<gap:plugin name="cordova-plugin-network-information" source="npm" />
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<gap:plugin name="phonegap-plugin-push" source="npm" />
