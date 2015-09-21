@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:54
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-21 20:48:21
+* @Last Modified time: 2015-09-21 22:48:43
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -13,7 +13,7 @@
 var id = GetDataValue('id');
 var connected;
 var page = 0;
-var temp = '<a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid mdl-color--grey-300 stroke rtl nop category-item"><div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone nom" style="background: url(http://192.168.1.2/news_admin/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--3-col-phone"><h5 class="mdl-color-text--grey-800">{{title}}</h5></div></div></a>';
+var temp = '<a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid mdl-color--grey-300 stroke rtl nop category-item"><div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--3-col-phone"><h5 class="mdl-color-text--grey-800">{{title}}</h5></div></div></a>';
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
