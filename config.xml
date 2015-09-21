@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="elmeniawy.eslam.nabd" android-versionCode="1014001" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-	<name>Nabd</name>
+<widget id="elmeniawy.eslam.nabdtest" android-versionCode="1014001" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+	<name>Nabd Test</name>
 	<description>
 		Nabd elections mobile application.
 	</description>
