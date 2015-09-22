@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:54
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 10:16:41
+* @Last Modified time: 2015-09-22 13:33:55
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -13,7 +13,7 @@
 var id = GetDataValue('id');
 var connected;
 var page = 0;
-var temp = '<a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid mdl-color--grey-300 stroke rtl nop category-item"><div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--3-col-phone"><h5 class="mdl-color-text--grey-800">{{title}}</h5></div></div></a>';
+var temp = '<a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid mdl-color--grey-300 stroke rtl nop category-item"><div class="mdl-cell grid-20 nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell grid-80"><h5 class="mdl-color-text--grey-800">{{title}}</h5></div></div></a>';
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	$('.mdl-layout__drawer-button').html('<img class="material-icons" src="img/menu.png">');
@@ -87,4 +87,10 @@ function fillData(response) {
 	for (var i = 0; i < response.length; i++) {
 		$('#main-data').append(temp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title).replace(/{{image}}/g, response[i].image));
 	}
+	$('.grid-20').each(function() {
+		$(this).width((($(window).width() - 16) / 0.2) + 'px');
+	});
+	$('.grid-80').each(function() {
+		$(this).width(((($(window).width() - 16) * 0.8) - 16) + 'px');
+	});
 }
