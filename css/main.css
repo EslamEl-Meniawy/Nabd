@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 14:15:33
+* @Last Modified time: 2015-09-22 14:25:35
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -104,7 +104,7 @@ h5 {
 	color: white;
 	line-height: 22px;
 	padding: 18px 24px;
-	bottom: 0px;
+	bottom: 45px;
 	opacity: 0;
 	left: 0px;
 	right: 0px;
