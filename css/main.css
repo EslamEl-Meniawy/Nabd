@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 11:07:25
+* @Last Modified time: 2015-09-22 11:35:34
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -17,6 +17,9 @@ body {
 	-webkit-touch-callout: none;
 	-webkit-text-size-adjust: none;
 	-webkit-user-select: none;
+}
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
 }
 html, body, .mdl-layout__content, .page-content {
 	width: 100%;
