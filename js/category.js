@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:54
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 13:33:55
+* @Last Modified time: 2015-09-22 13:53:09
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -88,7 +88,7 @@ function fillData(response) {
 		$('#main-data').append(temp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title).replace(/{{image}}/g, response[i].image));
 	}
 	$('.grid-20').each(function() {
-		$(this).width((($(window).width() - 16) / 0.2) + 'px');
+		$(this).width(((($(window).width() - 16) * 0.2) - 16) + 'px');
 	});
 	$('.grid-80').each(function() {
 		$(this).width(((($(window).width() - 16) * 0.8) - 16) + 'px');

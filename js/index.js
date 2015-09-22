@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 13:31:52
+* @Last Modified time: 2015-09-22 13:53:33
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -120,7 +120,7 @@ function fillLatest(response) {
 		$('#newsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
 	}
 	$('.grid-30').each(function() {
-		$(this).width((($(window).width() - 16) / 0.3) + 'px');
+		$(this).width(((($(window).width() - 16) * 0.3) - 16) + 'px');
 	});
 	$('.grid-70').each(function() {
 		$(this).width(((($(window).width() - 16) * 0.7) - 16) + 'px');
@@ -144,7 +144,7 @@ function fillResults(response) {
 		$('#resultsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
 	}
 	$('.grid-30').each(function() {
-		$(this).width((($(window).width() - 16) / 0.3) + 'px');
+		$(this).width(((($(window).width() - 16) * 0.3) - 16) + 'px');
 	});
 	$('.grid-70').each(function() {
 		$(this).width(((($(window).width() - 16) * 0.7) - 16) + 'px');
