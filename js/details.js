@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:33
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 10:16:47
+* @Last Modified time: 2015-09-22 14:16:15
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -11,6 +11,7 @@
 */
 
 var connected;
+$('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	$('.mdl-layout__drawer-button').html('<img class="material-icons" src="img/menu.png">');

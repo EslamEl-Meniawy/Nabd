@@ -2,7 +2,7 @@
 ~ @Author: Eslam El-Meniawy
 ~ @Date: 2015-09-13 15:31:15
 ~ @Last Modified by: eslam
-~ @Last Modified time: 2015-09-22 10:17:34
+~ @Last Modified time: 2015-09-22 14:16:32
 ~
 ~ Dear maintainer:
 ~ When I wrote this, only God and I understood what I was doing
@@ -120,6 +120,7 @@
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript">
 			document.addEventListener("deviceready", function() {
+				$('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
 				$('.mdl-layout__drawer-button').html('<img class="material-icons" src="img/menu.png">');
 				document.addEventListener("backbutton", function() {
 					window.location = "index.html";

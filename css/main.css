@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 13:51:17
+* @Last Modified time: 2015-09-22 14:15:33
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -23,6 +23,9 @@ header, section, footer, aside, nav, main, article, figure {
 }
 html, body, .mdl-layout__content, .page-content {
 	width: 100%;
+}
+.mdl-layout__content {
+	margin-bottom: 45px;
 }
 .page-content .mdl-grid  {
 	width: 100%;
@@ -149,6 +152,9 @@ h5 {
 }
 .mdl-mega-footer {
 	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	z-index: 15;
 }
 .footer-div {
 	width: 24px;
