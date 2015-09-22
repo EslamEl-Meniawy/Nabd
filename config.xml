@@ -12,7 +12,7 @@
 	<preference name="android-minSdkVersion" value="10" />
 	<gap:plugin name="cordova-plugin-network-information" source="npm" />
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
-	<gap:plugin name="phonegap-plugin-push" source="npm" />
+	<gap:plugin name="phonegap-plugin-push" source="npm" version="1.2.3" />
 	<gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="plugins.cordova.io" />
 	<access origin="*" />
 	<plugin name="cordova-plugin-whitelist" version="1" />
