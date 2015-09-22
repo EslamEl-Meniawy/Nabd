@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-21 21:33:28
+* @Last Modified time: 2015-09-22 10:43:12
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -13,13 +13,19 @@
 * {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-html, body {
-	width: 100%;
-}
 body {
 	-webkit-touch-callout: none;
 	-webkit-text-size-adjust: none;
 	-webkit-user-select: none;
+}
+html, body, .mdl-layout__content, .page-content {
+	width: 100%;
+}
+.page-content .mdl-grid  {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 .rtl {
 	direction: rtl;
@@ -132,7 +138,7 @@ h5 {
 	margin-top: 16px;
 }
 .mdl-mega-footer {
-	padding: 10px 10px;
+	padding: 10px;
 }
 .footer-div {
 	width: 24px;
@@ -198,7 +204,7 @@ h5 {
 .more-button {
 	position: fixed;
 	right: 24px;
-	bottom: 50px;
+	bottom: 68px;
 	z-index: 99999;
 }
 /* mobile */
