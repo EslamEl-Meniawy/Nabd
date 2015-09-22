@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 10:43:12
+* @Last Modified time: 2015-09-22 11:07:25
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -104,7 +104,7 @@ h5 {
 	display: inline-block;
 	border: none;
 	font-size: inherit;
-	color: #FF5252;
+	color: rgb(100,221,23);
 	margin: 0px 24px 0px 0px;
 	padding: 0px;
 	min-width: min-content;
