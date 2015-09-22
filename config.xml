@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="elmeniawy.eslam.nabd" android-versionCode="1014001" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-	<name>Nabd</name>
+	<name>نبض</name>
 	<description>
 		Nabd elections mobile application.
 	</description>
@@ -12,6 +12,7 @@
 	<preference name="android-minSdkVersion" value="10" />
 	<gap:plugin name="cordova-plugin-network-information" source="npm" />
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
+	<gap:plugin name="cordova-plugin-splashscreen" source="npm" />
 	<gap:plugin name="phonegap-plugin-push" source="npm" version="1.2.3" />
 	<gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="plugins.cordova.io" />
 	<icon src="icon.png" />
