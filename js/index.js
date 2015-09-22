@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 14:13:20
+* @Last Modified time: 2015-09-22 15:35:58
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -60,7 +60,11 @@ function onDeviceReady() {
 	push.on('error', function(e) {});
 }
 function onBackKeyDown() {
-	navigator.app.exitApp();
+	if ($('.mdl-layout__drawer').hasClass('is-visible')) {
+		$('.mdl-layout__drawer').removeClass('is-visible');
+	} else {
+		navigator.app.exitApp();
+	}
 }
 function checkConnection() {
 	var networkState = navigator.connection.type;
@@ -121,7 +125,7 @@ function fillLatest(response) {
 		$('#newsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
 	}
 	$('.grid-30').each(function() {
-		$(this).width(((($(window).width() - 16) * 0.3) - 16) + 'px');
+		$(this).width((($(window).width() - 16) * 0.3) + 'px');
 	});
 	$('.grid-70').each(function() {
 		$(this).width(((($(window).width() - 16) * 0.7) - 16) + 'px');
@@ -145,7 +149,7 @@ function fillResults(response) {
 		$('#resultsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
 	}
 	$('.grid-30').each(function() {
-		$(this).width(((($(window).width() - 16) * 0.3) - 16) + 'px');
+		$(this).width((($(window).width() - 16) * 0.3) + 'px');
 	});
 	$('.grid-70').each(function() {
 		$(this).width(((($(window).width() - 16) * 0.7) - 16) + 'px');
