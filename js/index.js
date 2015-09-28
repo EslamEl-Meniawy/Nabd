@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-22 15:35:58
+* @Last Modified time: 2015-09-28 13:33:45
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -44,7 +44,7 @@ function onDeviceReady() {
 		window.plugins.uniqueDeviceID.get(function(uuid) {
 			$.ajax({
 				type : 'POST',
-				url : 'http://11.11.11.21:3000/register',
+				url : 'http://188.40.75.156:3030/register',
 				data : {
 					devId: uuid,
 					regId: data.registrationId
