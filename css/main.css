@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-29 14:41:57
+* @Last Modified time: 2015-09-29 15:48:56
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -127,6 +127,9 @@ h5 {
 	margin: auto;
 	max-width: 150px;
 }
+.title-line-height {
+	line-height: 1.3;
+}
 .main-grid-icon {
 	font-size: 32px;
 	margin-top: 10px;
@@ -223,6 +226,9 @@ h5 {
 }
 .details-data-block {
 	width: 100%;
+}
+.details-data-block p {
+	line-height: 1.1;
 }
 .more-button {
 	position: fixed;
