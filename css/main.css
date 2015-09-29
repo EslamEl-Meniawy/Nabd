@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-29 13:39:09
+* @Last Modified time: 2015-09-29 14:01:06
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -212,10 +212,14 @@ h5 {
 	display: block;
 }
 .details-title-h6 {
+	width: 100%;
 	line-height: 2.3;
 	margin: 0;
 	padding-right: 8px;
 	float: right;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 .details-data-block {
 	margin-top: 16px;
