@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-28 13:33:45
+* @Last Modified time: 2015-09-29 14:06:11
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -14,7 +14,7 @@ var latestLink = 'http://188.40.75.156:8080/nabd/index.php/news/recent_news',
 	resultsLink = 'http://188.40.75.156:8080/nabd/index.php/news/recent_news';
 var connected;
 var loadedLatest = false, loadedResults = false;
-var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid slide-grid mdl-color--grey-300 nop"><div class="mdl-cell grid-30 nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell grid-70 rtl"><h5 class="mdl-color-text--grey-800">{{title}}</h5></div></div></a></div>';
+var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="slide-grid mdl-color--grey-300 nop"><div class="mdl-cell grid-30 nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell grid-70 rtl"><h5 class="mdl-color-text--grey-800">{{title}}</h5></div></div></a></div>';
 $('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
 $('.grid-50').each(function() {
 	$(this).width(((($(window).width() - 16) * 0.5) - 16) + 'px');

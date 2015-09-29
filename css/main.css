@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-29 14:01:06
+* @Last Modified time: 2015-09-29 14:08:58
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -222,7 +222,6 @@ h5 {
 	box-sizing: border-box;
 }
 .details-data-block {
-	margin-top: 16px;
 	width: 100%;
 }
 .more-button {
