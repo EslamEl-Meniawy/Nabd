@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:54
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 11:59:27
+* @Last Modified time: 2015-09-30 14:34:32
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -13,7 +13,7 @@
 var id = GetDataValue('id');
 var connected;
 var page = 0;
-var temp = '<a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid mdl-color--grey-300 stroke rtl nop category-item"><div class="mdl-cell grid-25 nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell grid-75"><h5 class="mdl-color-text--grey-800 title-line-height">{{title}}</h5></div></div></a>';
+var temp = '<a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid mdl-color--grey-300 stroke rtl nop category-item"><div class="mdl-cell grid-25 nom" style="background: url({{image}});background-size: cover;"></div><div class="mdl-cell grid-75"><h5 class="mdl-color-text--grey-800 title-line-height">{{title}}</h5></div></div></a>';
 $('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
@@ -93,7 +93,13 @@ function loadDataOffline() {
 }
 function fillData(response) {
 	for (var i = 0; i < response.length; i++) {
-		$('#main-data').append(temp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title).replace(/{{image}}/g, response[i].image));
+		var tempToAppend = temp;
+		if (response[i].image != '' && response[i].image != null) {
+			tempToAppend = tempToAppend.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
+		} else {
+			tempToAppend = tempToAppend.replace(/{{image}}/g, 'icon.png');
+		}
+		$('#main-data').append(tempToAppend.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title));
 	}
 	$('.grid-25').each(function() {
 		$(this).width(((($(window).width()) * 0.25)) + 'px');

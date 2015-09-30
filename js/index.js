@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 14:11:59
+* @Last Modified time: 2015-09-30 14:31:11
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -14,7 +14,7 @@ var latestLink = 'http://188.40.75.156:8080/nabd/index.php/news/recent_news',
 	resultsLink = 'http://188.40.75.156:8080/nabd/index.php/news?section=15&page=0';
 var connected;
 var loadedLatest = false, loadedResults = false;
-var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid slide-grid mdl-color--grey-300 nop"><div class="mdl-cell grid-30 nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell grid-70 rtl"><h5 class="mdl-color-text--grey-800 title-line-height">{{title}}</h5></div></div></a></div>';
+var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid slide-grid mdl-color--grey-300 nop"><div class="mdl-cell grid-30 nom" style="background: url({{image}});background-size: cover;"></div><div class="mdl-cell grid-70 rtl"><h5 class="mdl-color-text--grey-800 title-line-height">{{title}}</h5></div></div></a></div>';
 var androidversion;
 $('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
 $('.grid-50').each(function() {
@@ -132,12 +132,22 @@ function fillLatest(response) {
 	if (androidversion < 4.3) {
 		var htmlLatest = '';
 		for (var i = 0; i < response.length; i++) {
-			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title) + '<br><br>';
+			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title) + '<br>';
+			if (response[i].image != '' && response[i].image != null) {
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
+			} else {
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'icon.png');
+			}
 		}
 	} else {
 		var htmlLatest = '<div class="swiper-container swiper-container-news" dir="rtl"><div class="swiper-wrapper">';
 		for (var i = 0; i < response.length; i++) {
-			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title);
+			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title);
+			if (response[i].image != '' && response[i].image != null) {
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
+			} else {
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'icon.png');
+			}
 		}
 		htmlLatest += '</div><div class="swiper-pagination swiper-pagination-news"></div></div>';
 	}
@@ -166,12 +176,22 @@ function fillResults(response) {
 	if (androidversion < 4.3) {
 		var htmlLatest = '';
 		for (var i = 0; i < response.length; i++) {
-			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title) + '<br><br>';
+			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title) + '<br>';
+			if (response[i].image != '' && response[i].image != null) {
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
+			} else {
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'icon.png');
+			}
 		}
 	} else {
 		var htmlLatest = '<div class="swiper-container swiper-container-results" dir="rtl"><div class="swiper-wrapper">';
 		for (var i = 0; i < response.length; i++) {
-			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title);
+			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title);
+			if (response[i].image != '' && response[i].image != null) {
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
+			} else {
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'icon.png');
+			}
 		}
 		htmlLatest += '</div><div class="swiper-pagination swiper-pagination-results"></div></div>';
 	}
