@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-29 15:48:21
+* @Last Modified time: 2015-09-30 10:01:49
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -35,7 +35,7 @@ function onDeviceReady() {
 	}
 	var push = PushNotification.init({
 		"android": {
-			"senderID": "7577940910"
+			"senderID": "512981003853"
 		},
 		"ios": {"alert": "true", "badge": "true", "sound": "true"}, 
 		"windows": {} 
