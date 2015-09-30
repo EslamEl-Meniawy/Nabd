@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 12:53:57
+* @Last Modified time: 2015-09-30 12:59:01
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -141,8 +141,9 @@ function fillLatest(response) {
 	});
 	new Swiper('.swiper-container-news', {
 		pagination: '.swiper-pagination-news',
-		slidesPerView: 3,
+		slidesPerView: 1,
 		slidesPerColumn: 3,
+		slidesPerGroup: 3,
 		paginationClickable: true,
 		autoplay: 5000,
 		observer: true,
@@ -166,8 +167,9 @@ function fillResults(response) {
 	});
 	new Swiper('.swiper-container-results', {
 		pagination: '.swiper-pagination-results',
-		slidesPerView: 3,
+		slidesPerView: 1,
 		slidesPerColumn: 3,
+		slidesPerGroup: 3,
 		paginationClickable: true,
 		autoplay: 5000,
 		observer: true,
