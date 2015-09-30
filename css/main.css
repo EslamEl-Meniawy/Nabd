@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-29 16:52:42
+* @Last Modified time: 2015-09-30 11:25:04
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -128,7 +128,7 @@ h5 {
 	max-width: 150px;
 }
 .title-line-height {
-	line-height: 2;
+	line-height: 1.8;
 }
 .main-grid-icon {
 	font-size: 32px;
