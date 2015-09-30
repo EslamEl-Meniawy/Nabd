@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 14:31:11
+* @Last Modified time: 2015-09-30 16:11:21
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -129,14 +129,14 @@ function loadResultsOffline() {
 	}
 }
 function fillLatest(response) {
-	if (androidversion < 4.3) {
+	if (androidversion < 4.4) {
 		var htmlLatest = '';
 		for (var i = 0; i < response.length; i++) {
-			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title) + '<br>';
+			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title) + '<div style="width: 100%;height: 5px;"></div>';
 			if (response[i].image != '' && response[i].image != null) {
 				htmlLatest = htmlLatest.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
 			} else {
-				htmlLatest = htmlLatest.replace(/{{image}}/g, 'icon.png');
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'img/logo.png');
 			}
 		}
 	} else {
@@ -146,7 +146,7 @@ function fillLatest(response) {
 			if (response[i].image != '' && response[i].image != null) {
 				htmlLatest = htmlLatest.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
 			} else {
-				htmlLatest = htmlLatest.replace(/{{image}}/g, 'icon.png');
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'img/logo.png');
 			}
 		}
 		htmlLatest += '</div><div class="swiper-pagination swiper-pagination-news"></div></div>';
@@ -173,14 +173,14 @@ function fillLatest(response) {
 	}
 }
 function fillResults(response) {
-	if (androidversion < 4.3) {
+	if (androidversion < 4.4) {
 		var htmlLatest = '';
 		for (var i = 0; i < response.length; i++) {
-			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title) + '<br>';
+			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title) + '<div style="width: 100%;height: 5px;"></div>';
 			if (response[i].image != '' && response[i].image != null) {
 				htmlLatest = htmlLatest.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
 			} else {
-				htmlLatest = htmlLatest.replace(/{{image}}/g, 'icon.png');
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'img/logo.png');
 			}
 		}
 	} else {
@@ -190,7 +190,7 @@ function fillResults(response) {
 			if (response[i].image != '' && response[i].image != null) {
 				htmlLatest = htmlLatest.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
 			} else {
-				htmlLatest = htmlLatest.replace(/{{image}}/g, 'icon.png');
+				htmlLatest = htmlLatest.replace(/{{image}}/g, 'img/logo.png');
 			}
 		}
 		htmlLatest += '</div><div class="swiper-pagination swiper-pagination-results"></div></div>';

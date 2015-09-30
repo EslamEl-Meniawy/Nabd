@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:54
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 14:34:32
+* @Last Modified time: 2015-09-30 15:00:24
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -97,7 +97,7 @@ function fillData(response) {
 		if (response[i].image != '' && response[i].image != null) {
 			tempToAppend = tempToAppend.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
 		} else {
-			tempToAppend = tempToAppend.replace(/{{image}}/g, 'icon.png');
+			tempToAppend = tempToAppend.replace(/{{image}}/g, 'img/logo.png');
 		}
 		$('#main-data').append(tempToAppend.replace(/{{id}}/g, response[i].id).replace(/{{title}}/g, response[i].title));
 	}
