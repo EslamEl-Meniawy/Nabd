@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 13:32:46
+* @Last Modified time: 2015-09-30 13:47:19
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -129,7 +129,7 @@ function loadResultsOffline() {
 	}
 }
 function fillLatest(response) {
-	if (androidversion <= 2.3) {
+	if (androidversion < 4.3) {
 		var htmlLatest = '';
 		for (var i = 0; i < response.length; i++) {
 			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title);
@@ -186,7 +186,7 @@ function fillLatest(response) {
 	}*/
 }
 function fillResults(response) {
-	if (androidversion <= 2.3) {
+	if (androidversion < 4.3) {
 		var htmlLatest = '';
 		for (var i = 0; i < response.length; i++) {
 			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title);
