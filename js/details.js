@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:33
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-29 16:54:06
+* @Last Modified time: 2015-09-30 11:59:35
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -16,6 +16,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	$('.mdl-layout__drawer-button').html('<img class="material-icons" src="img/menu.png">');
 	document.addEventListener("backbutton", onBackKeyDown, false);
+	window.addEventListener('orientationchange', function() {
+		$('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
+	});
 	checkConnection();
 	if (connected == 1) {
 		$('#loading').show();

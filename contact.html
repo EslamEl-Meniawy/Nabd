@@ -2,7 +2,7 @@
 ~ @Author: Eslam El-Meniawy
 ~ @Date: 2015-09-13 15:31:15
 ~ @Last Modified by: eslam
-~ @Last Modified time: 2015-09-29 16:51:04
+~ @Last Modified time: 2015-09-30 12:00:16
 ~
 ~ Dear maintainer:
 ~ When I wrote this, only God and I understood what I was doing
@@ -139,6 +139,9 @@
 						window.location = "index.html";
 					}
 				}, false);
+				window.addEventListener('orientationchange', function() {
+					$('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
+				});
 			}, false);
 		</script>
 	</body>

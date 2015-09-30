@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 11:45:59
+* @Last Modified time: 2015-09-30 11:59:14
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -14,7 +14,8 @@ var latestLink = 'http://188.40.75.156:8080/nabd/index.php/news/recent_news',
 	resultsLink = 'http://188.40.75.156:8080/nabd/index.php/news?section=15&page=0';
 var connected;
 var loadedLatest = false, loadedResults = false;
-var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="slide-grid mdl-color--grey-300 nop"><div class="mdl-cell grid-30 nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell grid-70 rtl"><h5 class="mdl-color-text--grey-800 title-line-height">{{title}}</h5></div></div></a></div>';
+var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid slide-grid mdl-color--grey-300 nop"><div class="mdl-cell grid-30 nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell grid-70 rtl"><h5 class="mdl-color-text--grey-800 title-line-height">{{title}}</h5></div></div></a></div>';
+var androidversion;
 $('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
 $('.grid-50').each(function() {
 	$(this).width(((($(window).width() - 16) * 0.5) - 16) + 'px');
@@ -23,6 +24,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	$('.mdl-layout__drawer-button').html('<img class="material-icons" src="img/menu.png">');
 	document.addEventListener("backbutton", onBackKeyDown, false);
+	window.addEventListener('orientationchange', function() {
+		$('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
+	});
+	var ua = navigator.userAgent;
+	if (ua.indexOf("Android") >= 0) {
+		androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8));
+	}
 	checkConnection();
 	if (connected == 1) {
 		$('#loading').show();
@@ -121,6 +129,7 @@ function loadResultsOffline() {
 	}
 }
 function fillLatest(response) {
+	//if (androidversion <= 2.3) {} else {}
 	for (var i = 0; i < response.length; i++) {
 		$('#newsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
 	}
@@ -145,6 +154,7 @@ function fillLatest(response) {
 	}
 }
 function fillResults(response) {
+	//if (androidversion <= 2.3) {} else {}
 	for (var i = 0; i < response.length; i++) {
 		$('#resultsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
 	}
