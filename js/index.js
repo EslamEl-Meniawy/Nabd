@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 13:47:19
+* @Last Modified time: 2015-09-30 14:11:59
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -132,7 +132,7 @@ function fillLatest(response) {
 	if (androidversion < 4.3) {
 		var htmlLatest = '';
 		for (var i = 0; i < response.length; i++) {
-			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title);
+			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title) + '<br><br>';
 		}
 	} else {
 		var htmlLatest = '<div class="swiper-container swiper-container-news" dir="rtl"><div class="swiper-wrapper">';
@@ -161,35 +161,12 @@ function fillLatest(response) {
 	if (loadedLatest && loadedResults) {
 		$('#loading').hide();
 	}
-	/*for (var i = 0; i < response.length; i++) {
-		$('#newsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
-	}
-	$('.grid-30').each(function() {
-		$(this).width((($(window).width() - 16) * 0.3) + 'px');
-	});
-	$('.grid-70').each(function() {
-		$(this).width(((($(window).width() - 16) * 0.7) - 16) + 'px');
-	});
-	new Swiper('.swiper-container-news', {
-		pagination: '.swiper-pagination-news',
-		slidesPerView: 1,
-		slidesPerColumn: 3,
-		slidesPerGroup: 3,
-		paginationClickable: true,
-		autoplay: 5000,
-		observer: true,
-		observeParents: true
-	});
-	loadedLatest = true;
-	if (loadedLatest && loadedResults) {
-		$('#loading').hide();
-	}*/
 }
 function fillResults(response) {
 	if (androidversion < 4.3) {
 		var htmlLatest = '';
 		for (var i = 0; i < response.length; i++) {
-			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title);
+			htmlLatest += slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title) + '<br><br>';
 		}
 	} else {
 		var htmlLatest = '<div class="swiper-container swiper-container-results" dir="rtl"><div class="swiper-wrapper">';
@@ -218,27 +195,4 @@ function fillResults(response) {
 	if (loadedLatest && loadedResults) {
 		$('#loading').hide();
 	}
-	/*for (var i = 0; i < response.length; i++) {
-		$('#resultsWrapper').append(slideTemp.replace(/{{id}}/g, response[i].id).replace(/{{image}}/g, response[i].image).replace(/{{title}}/g, response[i].title));
-	}
-	$('.grid-30').each(function() {
-		$(this).width((($(window).width() - 16) * 0.3) + 'px');
-	});
-	$('.grid-70').each(function() {
-		$(this).width(((($(window).width() - 16) * 0.7) - 16) + 'px');
-	});
-	new Swiper('.swiper-container-results', {
-		pagination: '.swiper-pagination-results',
-		slidesPerView: 1,
-		slidesPerColumn: 3,
-		slidesPerGroup: 3,
-		paginationClickable: true,
-		autoplay: 5000,
-		observer: true,
-		observeParents: true
-	});
-	loadedResults = true;
-	if (loadedLatest && loadedResults) {
-		$('#loading').hide();
-	}*/
 }
