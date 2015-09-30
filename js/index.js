@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 11:40:02
+* @Last Modified time: 2015-09-30 11:45:59
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -14,8 +14,7 @@ var latestLink = 'http://188.40.75.156:8080/nabd/index.php/news/recent_news',
 	resultsLink = 'http://188.40.75.156:8080/nabd/index.php/news?section=15&page=0';
 var connected;
 var loadedLatest = false, loadedResults = false;
-var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid slide-grid mdl-color--grey-300 nop"><div class="mdl-cell grid-30 nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell grid-70 rtl"><h5 class="mdl-color-text--grey-800 title-line-height">{{title}}</h5></div></div></a></div>';
-var latestSwiper = null, resultsSwiper = null;
+var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="slide-grid mdl-color--grey-300 nop"><div class="mdl-cell grid-30 nom" style="background: url(http://188.40.75.156:8080/nabd/images/news/{{image}});background-size: cover;"></div><div class="mdl-cell grid-70 rtl"><h5 class="mdl-color-text--grey-800 title-line-height">{{title}}</h5></div></div></a></div>';
 $('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
 $('.grid-50').each(function() {
 	$(this).width(((($(window).width() - 16) * 0.5) - 16) + 'px');
@@ -131,7 +130,7 @@ function fillLatest(response) {
 	$('.grid-70').each(function() {
 		$(this).width(((($(window).width() - 16) * 0.7) - 16) + 'px');
 	});
-	latestSwiper = new Swiper('.swiper-container-news', {
+	new Swiper('.swiper-container-news', {
 		pagination: '.swiper-pagination-news',
 		slidesPerView: 1,
 		slidesPerColumn: 3,
@@ -155,7 +154,7 @@ function fillResults(response) {
 	$('.grid-70').each(function() {
 		$(this).width(((($(window).width() - 16) * 0.7) - 16) + 'px');
 	});
-	resultsSwiper = new Swiper('.swiper-container-results', {
+	new Swiper('.swiper-container-results', {
 		pagination: '.swiper-pagination-results',
 		slidesPerView: 1,
 		slidesPerColumn: 3,
@@ -167,32 +166,5 @@ function fillResults(response) {
 	loadedResults = true;
 	if (loadedLatest && loadedResults) {
 		$('#loading').hide();
-	}
-}
-function refreshSwiper(swiperToRefresh) {
-	if (swiperToRefresh == 'latest') {
-		if (latestSwiper != null) {
-			latestSwiper = new Swiper('.swiper-container-news', {
-				pagination: '.swiper-pagination-news',
-				slidesPerView: 1,
-				slidesPerColumn: 3,
-				paginationClickable: true,
-				autoplay: 5000,
-				observer: true,
-				observeParents: true
-			});
-		}
-	} else if (swiperToRefresh == 'results') {
-		if (resultsSwiper != null) {
-			resultsSwiper = new Swiper('.swiper-container-results', {
-				pagination: '.swiper-pagination-results',
-				slidesPerView: 1,
-				slidesPerColumn: 3,
-				paginationClickable: true,
-				autoplay: 5000,
-				observer: true,
-				observeParents: true
-			});
-		}
 	}
 }
