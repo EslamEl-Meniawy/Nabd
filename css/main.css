@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 12:47:44
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 11:25:04
+* @Last Modified time: 2015-10-01 10:05:44
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -240,6 +240,9 @@ h5 {
 	bottom: 68px;
 	z-index: 99999;
 }
+.grid-image {
+	width: 100%;
+}
 /* mobile */
 @media screen and (max-width: 599px) {
 	.header-img {
@@ -248,7 +251,7 @@ h5 {
 	.mdl-layout__drawer-button img {
 		margin-bottom: 8px;
 	}
-	.swiper-slide, .category-item {
+	.swiper-slide, .category-item, .grid-image {
 		height: 80px;
 	}
 	.swiper-container-news, .swiper-container-results {
@@ -266,7 +269,7 @@ h5 {
 	.mdl-layout__drawer-button img {
 		margin-bottom: 8px;
 	}
-	.swiper-slide, .category-item {
+	.swiper-slide, .category-item, .grid-image {
 		height: 130px;
 	}
 	.swiper-container-news, .swiper-container-results {
@@ -284,7 +287,7 @@ h5 {
 	.mdl-layout__drawer-button img {
 		margin-bottom: 10px;
 	}
-	.swiper-slide, .category-item {
+	.swiper-slide, .category-item, .grid-image {
 		height: 180px;
 	}
 	.swiper-container-news, .swiper-container-results {
