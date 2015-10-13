@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:33
 * @Last Modified by: eslam
-* @Last Modified time: 2015-09-30 11:59:35
+* @Last Modified time: 2015-10-13 11:54:58
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -55,11 +55,11 @@ function checkConnection() {
 function loadData() {
 	$.ajax({
 		type : 'GET',
-		url : 'http://188.40.75.156:8080/nabd/index.php/News/get_news/' + GetDataValue('id'),
+		url : 'http://188.40.75.156/nabd/index.php/News/get_news/' + GetDataValue('id'),
 		dataType : 'JSON'
 	}).done(function(response) {
 		if (response[0].image != '' && response[0].image != null) {
-			$('#news-image').attr('src', 'http://188.40.75.156:8080/nabd/images/news/' + response[0].image);
+			$('#news-image').attr('src', 'http://188.40.75.156/nabd/images/news/' + response[0].image);
 		} else {
 			$('#news-image').hide();
 		}

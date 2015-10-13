@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-10 14:24:54
 * @Last Modified by: eslam
-* @Last Modified time: 2015-10-01 10:15:10
+* @Last Modified time: 2015-10-13 11:54:43
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -74,7 +74,7 @@ function checkConnection() {
 function loadData() {
 	$.ajax({
 		type : 'GET',
-		url : 'http://188.40.75.156:8080/nabd/index.php/news?section=' + id + '&page=' + page,
+		url : 'http://188.40.75.156/nabd/index.php/news?section=' + id + '&page=' + page,
 		dataType : 'JSON'
 	}).done(function(response) {
 		if (page == 0) {
@@ -101,7 +101,7 @@ function fillData(response) {
 	for (var i = 0; i < response.length; i++) {
 		var tempToAppend = temp;
 		if (response[i].image != '' && response[i].image != null) {
-			tempToAppend = tempToAppend.replace(/{{image}}/g, 'http://188.40.75.156:8080/nabd/images/news/' + response[i].image);
+			tempToAppend = tempToAppend.replace(/{{image}}/g, 'http://188.40.75.156/nabd/images/news/' + response[i].image);
 		} else {
 			tempToAppend = tempToAppend.replace(/{{image}}/g, 'img/logo.png');
 		}
