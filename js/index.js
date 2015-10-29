@@ -2,7 +2,7 @@
 * @Author: Eslam El-Meniawy
 * @Date: 2015-09-09 13:14:48
 * @Last Modified by: eslam
-* @Last Modified time: 2015-10-13 11:55:54
+* @Last Modified time: 2015-10-29 14:42:04
 *
 * Dear maintainer:
 * When I wrote this, only God and I understood what I was doing
@@ -15,7 +15,7 @@ var latestLink = 'http://188.40.75.156/nabd/index.php/news/recent_news',
 var connected;
 var loadedLatest = false, loadedResults = false;
 var slideTemp = '<div class="swiper-slide"><a class="tdn" href="details.html?id={{id}}"><div class="mdl-grid slide-grid mdl-color--grey-300 nop"><div class="mdl-cell grid-30 nom"><img class="grid-image" src="{{image}}"></div><div class="mdl-cell grid-70 rtl"><h5 class="mdl-color-text--grey-800 title-line-height">{{title}}</h5></div></div></a></div>';
-var androidversion;
+var androidversion = 4.4;
 $('.mdl-mega-footer').width(($(window).width() - 20) + 'px');
 $('.grid-50').each(function() {
 	$(this).width(((($(window).width() - 16) * 0.5) - 16) + 'px');
@@ -39,6 +39,31 @@ function onDeviceReady() {
 	var ua = navigator.userAgent;
 	if (ua.indexOf("Android") >= 0) {
 		androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8));
+		var push = PushNotification.init({
+			"android": {
+				"senderID": "512981003853"
+			},
+			"ios": {"alert": "true", "badge": "true", "sound": "true"}, 
+			"windows": {} 
+		});
+		push.on('registration', function(data) {
+			window.plugins.uniqueDeviceID.get(function(uuid) {
+				$.ajax({
+					type : 'POST',
+					url : 'http://188.40.75.156:3030/register',
+					data : {
+						devId: uuid,
+						regId: data.registrationId
+					}
+				});
+			}, function() {});
+		});
+		push.on('notification', function(data) {
+			if (!data.additionalData.foreground) {
+				window.location = "details.html?id=" + data.additionalData.additionalData.id;
+			}
+		});
+		push.on('error', function(e) {});
 	}
 	checkConnection();
 	if (connected == 1) {
@@ -50,31 +75,6 @@ function onDeviceReady() {
 		loadLatestOffline();
 		loadResultsOffline();
 	}
-	var push = PushNotification.init({
-		"android": {
-			"senderID": "512981003853"
-		},
-		"ios": {"alert": "true", "badge": "true", "sound": "true"}, 
-		"windows": {} 
-	});
-	push.on('registration', function(data) {
-		window.plugins.uniqueDeviceID.get(function(uuid) {
-			$.ajax({
-				type : 'POST',
-				url : 'http://188.40.75.156:3030/register',
-				data : {
-					devId: uuid,
-					regId: data.registrationId
-				}
-			});
-		}, function() {});
-	});
-	push.on('notification', function(data) {
-		if (!data.additionalData.foreground) {
-			window.location = "details.html?id=" + data.additionalData.additionalData.id;
-		}
-	});
-	push.on('error', function(e) {});
 }
 function onBackKeyDown() {
 	if ($('.mdl-layout__drawer').hasClass('is-visible')) {
